@@ -44,7 +44,7 @@ class Game:
     def process(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game.stopped = True
+                self.stopped = True
             for button in self.buttons:
                 button.handle_event(event, self)
             self.menu.handle_event(event, self)

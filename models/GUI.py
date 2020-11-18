@@ -1,6 +1,6 @@
 import pygame
 from functools import partial
-from Button import Button
+from models.Button  import *
 from pygame.locals import *
 import os
 class GUI:
@@ -16,13 +16,13 @@ class GUI:
         player_gui = pygame.image.load('res/gui/life_bar_player.png')
         size = player_gui.get_rect().size
         aspect_ratio = size[0]/size[1]
-        player_gui = pygame.transform.scale(player_gui, (100*aspect_ratio, 100))
+        player_gui = pygame.transform.scale(player_gui, (int(100*aspect_ratio), 100))
         self.rendererPlayer = player_gui
 
         enemy_gui = pygame.image.load('res/gui/life_bar_enemy.png')
         size = enemy_gui.get_rect().size
         aspect_ratio = size[0]/size[1]
-        enemy_gui = pygame.transform.scale(enemy_gui, (75*aspect_ratio, 75))
+        enemy_gui = pygame.transform.scale(enemy_gui, (int(75*aspect_ratio), 75))
         self.rendererEnemy = enemy_gui
 
     def renderHPBar(self, game, bar_size, total_hp, actual_hp, position):

@@ -1,6 +1,8 @@
 import pygame
+#import models.Button as Button
 from functools import partial
-from Button import Button
+from models.Button import *
+
 class Menu:
     def __init__(self):
         pygame.font.init()
